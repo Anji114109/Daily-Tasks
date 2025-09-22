@@ -24,4 +24,4 @@ Focus on **HTML5, CSS3, Flexbox/Grid, media queries**, and a visually appealing 
 
 ## 🚀 Live Demo
 Check out the live version of my first task here:  
-👉 [View Live Landing Page](https://your-username.github.io/daily-task-1/)
+👉 [View Live Landing Page](https://22-09-2025-green.vercel.app)
