@@ -24,7 +24,7 @@
 ---
 
 ## 🔗 Live Preview
-👉 [View Live Landing Page](https://your-username.github.io/daily-task-1/)
+👉 [View Live Landing Page](https://22-09-2025-green.vercel.app)
 
 ---
 
