@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">MyBrand</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to MyBrand</h1>
+      <p>We create modern, responsive web experiences tailored to your needs.</p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Why Choose Us?</h2>
+    <div class="features-container">
+      <div class="feature-card">
+        <h3>⚡ Fast</h3>
+        <p>Our websites are optimized for speed, ensuring smooth performance.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 Responsive</h3>
+        <p>Looks great on any device — from mobile to desktop.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🔒 Secure</h3>
+        <p>We prioritize security to keep your data safe and protected.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">🌐</a>
+          <a href="#">🐦</a>
+          <a href="#">📘</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 MyBrand. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Toggle nav on small screens
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
