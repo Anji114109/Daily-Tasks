@@ -1,0 +1,194 @@
+/* ================================
+   To-Do List App Styling (Expanded)
+   ================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px; /* Expanded container */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #1b1f3b;
+}
+
+#date {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Input */
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#task-input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#add-btn {
+  padding: 0.6rem 1rem;
+  background: #00d1ff;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#add-btn:hover {
+  background: #00bcd4;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #eee;
+  transition: background 0.3s;
+}
+
+.filter-btn.active {
+  background: #00d1ff;
+  color: #fff;
+}
+
+.counters {
+  color: #333;
+}
+
+/* Tasks */
+#task-list {
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.task-time {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* Buttons inside tasks */
+.task-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.task-actions button {
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tick-btn {
+  background: #4caf50;
+}
+
+.tick-btn:hover {
+  background: #388e3c;
+}
+
+.edit-btn {
+  background: #00bcd4;
+}
+
+.edit-btn:hover {
+  background: #0097a7;
+}
+
+.remove-btn {
+  background: #ff6b6b;
+}
+
+.remove-btn:hover {
+  background: #ff4b4b;
+}
+
+/* Clear All */
+.clear-btn {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  background: #ff6b6b;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.clear-btn:hover {
+  background: #ff4b4b;
+}
