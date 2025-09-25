@@ -25,3 +25,29 @@ Focus on **HTML5, CSS3, Flexbox/Grid, media queries**, and a visually appealing 
 ## 🚀 Live Demo
 Check out the live version of my first task here:  
 👉 [View Live Landing Page](https://22-09-2025-green.vercel.app)
+
+
+# 📝 Task 2: Build a Dynamic To-Do List Web App Using Vanilla JavaScript
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+---
+
+## 🎯 Objective
+Create an **interactive To-Do List web application** where users can **add tasks, set a time for each task, mark them as completed, and delete tasks**.  
+Focus on **DOM manipulation, event handling, and dynamic UI updates** using **Vanilla JavaScript**.
+
+---
+
+## 🔧 Tools Used
+- **VS Code** – Free code editor  
+- **Chrome Browser** – Testing and debugging  
+- **Live Server Extension** – Real-time preview  
+- **Git & GitHub** – Version control and project hosting  
+
+## 🚀 Live Demo
+Check out the live version of my second task here:  
+👉 [View Live To-Do App](https://23-09-2025-green.vercel.app)
+
