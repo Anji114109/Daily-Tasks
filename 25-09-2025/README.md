@@ -5,11 +5,7 @@
 2. Installed **Express.js** using `npm install express`.  
 3. Created a **basic Express server** running on port 3000.  
 4. Defined an **in-memory array of book objects** with `{id, title, author}`.  
-5. Implemented REST API endpoints:  
-   - `GET /books` → Retrieve all books  
-   - `POST /books` → Add a new book  
-   - `PUT /books/:id` → Update an existing book by ID  
-   - `DELETE /books/:id` → Remove a book by ID  
+5. Implemented REST API endpoints.
 6. Used **middleware `express.json()`** to handle JSON request bodies.  
 7. Tested all endpoints with **Postman** to verify CRUD functionality.  
 
