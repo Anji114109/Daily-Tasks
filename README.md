@@ -51,3 +51,24 @@ Focus on **DOM manipulation, event handling, and dynamic UI updates** using **Va
 Check out the live version of my second task here:  
 👉 [View Live To-Do App](https://23-09-2025-green.vercel.app)
 
+
+# 📝 Task 3: Create a REST API to Manage Books Using Node.js & Express
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![API](https://img.shields.io/badge/REST-API-blue?style=for-the-badge)
+
+---
+
+## 🎯 Objective
+Build a **REST API server** using **Node.js and Express.js** that supports **CRUD operations** (Create, Read, Update, Delete) for managing a list of books stored in memory.
+
+---
+
+## 🔧 Tools Used
+- **Node.js** – Runtime environment  
+- **Express.js** – Web framework  
+- **Postman** – API testing  
+- **VS Code** – Code editor  
+
+
