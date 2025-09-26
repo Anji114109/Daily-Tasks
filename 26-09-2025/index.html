@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Showcase</title>
+    <style>
+        /* Base styles (mobile-first approach) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        .image-container {
+            margin: 2rem 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .responsive-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Desktop styles (min-width: 769px) */
+        @media (min-width: 769px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                margin-bottom: 0;
+                font-size: 2.2rem;
+            }
+
+            .nav-menu {
+                flex-direction: row;
+                gap: 0;
+            }
+
+            .nav-menu a {
+                padding: 12px 25px;
+                background: transparent;
+                border-radius: 0;
+            }
+
+            .nav-menu a:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero p {
+                font-size: 1.3rem;
+            }
+
+            .features {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .feature-card {
+                flex: 1 1 calc(33.333% - 2rem);
+                min-width: 300px;
+            }
+        }
+
+        /* Tablet styles (768px and below) */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Small mobile styles (480px and below) */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">ResponsiveSite</div>
+                <nav>
+                    <div class="nav-menu">
+                        <a href="#">Home</a>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Mobile-First Responsive Design</h1>
+            <p>This website demonstrates how to create a mobile-friendly layout using CSS media queries. The design adapts seamlessly to different screen sizes.</p>
+            <a href="#" class="btn">Get Started</a>
+        </section>
+
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                 alt="Responsive Design" class="responsive-img">
+        </div>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Flexible Layouts</h3>
+                <p>Using CSS Flexbox and Grid to create layouts that adapt to any screen size without horizontal scrolling.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Media Queries</h3>
+                <p>Applying different styles based on device characteristics like screen width, height, and orientation.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Mobile Navigation</h3>
+                <p>Transforming navigation menus from horizontal on desktop to vertical stacks on mobile devices.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Responsive Design Showcase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to demonstrate mobile menu toggle (though not required in this implementation)
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Responsive design ready!');
+        });
+    </script>
+</body>
+</html>
