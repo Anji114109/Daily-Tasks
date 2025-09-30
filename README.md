@@ -86,8 +86,6 @@ Host a **static website** for free using **GitHub Pages** and understand the ful
 ## 🎯 Objective
 Build a **contact form** with **client-side validation** for **name, email, and message** using **JavaScript**.
 
-## 🚀 Live Demo
-👉 [View Live Contact Form](https://30-09-2025-green.vercel.app)
 
 ---
 
