@@ -44,7 +44,6 @@ Focus on **DOM manipulation, event handling, and dynamic UI updates** using **Va
 ## 🎯 Objective
 Build a **REST API server** using **Node.js and Express.js** that supports **CRUD operations** (Create, Read, Update, Delete) for managing a list of books stored in memory.
 
-
 ---
 
 # 📝 Task 4: Make a Website Mobile-Friendly Using CSS Media Queries
@@ -62,4 +61,20 @@ Ensure the design works seamlessly across **mobile, tablet, and desktop** viewpo
 
 ---
 
+# 📝 Task 5: Deploy a Static Website Using GitHub Pages
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-181717?style=for-the-badge&logo=github&logoColor=white)
+![Deployment](https://img.shields.io/badge/Deployment-Automation-blue?style=for-the-badge)
+
+## 🎯 Objective
+Host a **static website** for free using **GitHub Pages**, and understand the complete **deployment workflow** from local development to live hosting.
+
+## 🚀 Live Demo
+👉 [View Live Website](https://29-09-2025.vercel.app)
+
+---
+
 # 📂 Repository Structure
+
