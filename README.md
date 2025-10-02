@@ -69,12 +69,26 @@ Ensure the design works seamlessly across **mobile, tablet, and desktop** viewpo
 ![Deployment](https://img.shields.io/badge/Deployment-Automation-blue?style=for-the-badge)
 
 ## 🎯 Objective
-Host a **static website** for free using **GitHub Pages**, and understand the complete **deployment workflow** from local development to live hosting.
+Host a **static website** for free using **GitHub Pages** and understand the full **deployment workflow** with Git and GitHub.
 
 ## 🚀 Live Demo
-👉 [View Live Website](https://29-09-2025.vercel.app)
+👉 [View Live Website](https://<username>.github.io)
+
+---
+
+# 📝 Task 6: Create a Contact Form and Validate Inputs Using JavaScript
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-Validation-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Form](https://img.shields.io/badge/Form-Validation-orange?style=for-the-badge)
+
+## 🎯 Objective
+Build a **contact form** with **client-side validation** for **name, email, and message** using **JavaScript**.
+
 
 ---
 
 # 📂 Repository Structure
+Each task is organized in its own folder:
 
