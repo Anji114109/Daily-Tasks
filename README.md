@@ -86,6 +86,22 @@ Host a **static website** for free using **GitHub Pages** and understand the ful
 ## 🎯 Objective
 Build a **contact form** with **client-side validation** for **name, email, and message** using **JavaScript**.
 
+## 🚀 Live Demo
+👉 [View Live Contact Form](https://30-09-2025-green.vercel.app)
+
+---
+
+# 📝 Task 7: Fetch and Display Data from a Public API Using Fetch API
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-Fetch-API-yellow?style=for-the-badge&logo=javascript&logoColor=black)
+![API](https://img.shields.io/badge/Public-API-blue?style=for-the-badge)
+
+## 🎯 Objective
+Use **JavaScript Fetch API** to get user data from a **public API** and display it dynamically on a webpage.
+
+
 
 ---
 
