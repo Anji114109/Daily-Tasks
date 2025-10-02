@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional User Data Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #7c3aed;
+            --light: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: var(--gray-800);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        .divider {
+            height: 4px;
+            width: 80px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin: 25px auto;
+            border-radius: 2px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0 40px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--card-shadow);
+            min-width: 180px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px -5px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--gray-800);
+            border: 1px solid var(--gray-300);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gray-100);
+            transform: translateY(-2px);
+            border-color: var(--gray-400);
+        }
+        
+        .status {
+            text-align: center;
+            padding: 16px 24px;
+            margin: 25px 0;
+            border-radius: 12px;
+            font-weight: 600;
+            display: none;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .status.loading {
+            background: var(--gray-100);
+            color: var(--gray-800);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .status.error {
+            background: #fee2e2;
+            color: var(--error);
+            display: block;
+        }
+        
+        .status.success {
+            background: #ecfdf5;
+            color: var(--success);
+            display: block;
+        }
+        
+        .users-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .user-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .user-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -6px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+        
+        .user-name {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 18px;
+            position: relative;
+        }
+        
+        .user-name::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .user-detail {
+            display: flex;
+            margin: 16px 0;
+            align-items: flex-start;
+        }
+        
+        .user-detail i {
+            min-width: 28px;
+            color: var(--primary);
+            margin-right: 16px;
+            font-size: 1.1rem;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .user-detail span {
+            color: var(--gray-800);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
+        .user-email {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .address {
+            color: var(--gray-600);
+        }
+        
+        .no-data {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            color: var(--gray-600);
+            font-size: 1.25rem;
+            border: 1px dashed var(--gray-300);
+        }
+        
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: var(--gray-600);
+            padding: 25px;
+            font-size: 0.95rem;
+            border-top: 1px solid var(--gray-200);
+            width: 100%;
+        }
+        
+        .api-info {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gray-100);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(37, 99, 235, 0.3);
+            border-top: 2px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .users-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .user-card {
+                padding: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 30px 0 20px;
+            }
+            
+            h1 {
+                font-size: 1.9rem;
+            }
+            
+            .user-name {
+                font-size: 1.45rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Professional User Data Explorer</h1>
+                <div class="divider"></div>
+                <p class="subtitle">Fetch and display user information from JSONPlaceholder API with a sleek, modern interface</p>
+            </div>
+        </header>
+        
+        <div class="controls">
+            <button id="fetchBtn" class="btn btn-primary">
+                <i class="fas fa-sync-alt"></i> Fetch User Data
+            </button>
+            <button id="clearBtn" class="btn btn-secondary">
+                <i class="fas fa-trash-alt"></i> Clear Data
+            </button>
+        </div>
+        
+        <div id="status" class="status"></div>
+        
+        <div id="usersContainer" class="users-container">
+            <!-- User cards will be inserted here -->
+        </div>
+        
+        <footer>
+            <p>Built with Fetch API • JSONPlaceholder Public API</p>
+            <div class="api-info">
+                <i class="fas fa-code"></i> Professional Implementation
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // DOM elements
+        const fetchBtn = document.getElementById('fetchBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const usersContainer = document.getElementById('usersContainer');
+        const statusDiv = document.getElementById('status');
+        
+        // API URL
+        const API_URL = 'https://jsonplaceholder.typicode.com/users';
+        
+        // Function to show status message
+        function showStatus(message, type) {
+            statusDiv.innerHTML = '';
+            
+            if (type === 'loading') {
+                statusDiv.innerHTML = `
+                    <div class="loading-spinner"></div>
+                    ${message}
+                `;
+            } else {
+                statusDiv.textContent = message;
+            }
+            
+            statusDiv.className = 'status ' + type;
+        }
+        
+        // Function to clear all user data
+        function clearUsers() {
+            usersContainer.innerHTML = '';
+            showStatus('Data cleared successfully', 'success');
+            
+            // Reset status after 2 seconds
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 2000);
+        }
+        
+        // Function to fetch and display user data
+        async function fetchUsers() {
+            // Show loading status
+            showStatus('Loading user data...', 'loading');
+            usersContainer.innerHTML = '';
+            
+            try {
+                // Fetch data from API
+                const response = await fetch(API_URL, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                // Check if response is ok
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                // Parse JSON data
+                const users = await response.json();
+                
+                // Check if we have data
+                if (users.length === 0) {
+                    usersContainer.innerHTML = '<div class="no-data"><i class="fas fa-exclamation-circle" style="font-size: 2.5rem; margin-bottom: 20px;"></i><br>No user data available</div>';
+                    showStatus('No user data found', 'error');
+                    return;
+                }
+                
+                // Display users
+                users.forEach(user => {
+                    const userCard = document.createElement('div');
+                    userCard.className = 'user-card';
+                    
+                    // Format address
+                    const address = `${user.address.street}, ${user.address.suite}, ${user.address.city} ${user.address.zipcode}`;
+                    
+                    userCard.innerHTML = `
+                        <div class="user-name">${user.name}</div>
+                        <div class="user-detail">
+                            <i class="fas fa-envelope"></i>
+                            <span class="user-email">${user.email}</span>
+                        </div>
+                        <div class="user-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="address">${address}</span>
+                        </div>
+                        <div class="user-detail">
+                            <i class="fas fa-phone"></i>
+                            <span>${user.phone}</span>
+                        </div>
+                        <div class="user-detail">
+                            <i class="fas fa-globe"></i>
+                            <span>${user.website}</span>
+                        </div>
+                        <div class="user-detail">
+                            <i class="fas fa-building"></i>
+                            <span><strong>${user.company.name}</strong> - ${user.company.catchPhrase}</span>
+                        </div>
+                    `;
+                    
+                    usersContainer.appendChild(userCard);
+                });
+                
+                showStatus(`Successfully loaded ${users.length} users`, 'success');
+                
+                // Reset status after 3 seconds
+                setTimeout(() => {
+                    statusDiv.style.display = 'none';
+                }, 3000);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                usersContainer.innerHTML = `
+                    <div class="no-data">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 2.5rem; color: var(--error); margin-bottom: 20px;"></i>
+                        <br>Failed to load user data. Please check your internet connection and try again.
+                    </div>
+                `;
+                showStatus('Network Error: ' + error.message, 'error');
+            }
+        }
+        
+        // Event listeners
+        fetchBtn.addEventListener('click', fetchUsers);
+        clearBtn.addEventListener('click', clearUsers);
+        
+        // Initial load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Show initial loading state
+            showStatus('Initializing application...', 'loading');
+            
+            // Fetch data after a short delay for better UX
+            setTimeout(fetchUsers, 800);
+        });
+    </script>
+</body>
+</html>
